@@ -1,2 +1,2 @@
-# rubyboard
-Simple Databaseless Kanban/Scrum board made in Ruby.
+# RubyBoard
+Simple Database-less Kanban/Scrum board made in Ruby and Sinatra.
