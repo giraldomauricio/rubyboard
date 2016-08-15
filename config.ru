@@ -8,7 +8,7 @@ require './controllers/ApplicationController.rb'
 Dir.glob('./controllers/*.rb').each { |file| require file }
 
 # map the controllers to routes
-# map('/example') { run ExampleController }
+map('/api') { run ApiController }
 # map('/mobile') { run MobileController }
 # map('/release') { run ReleaseController }
 # map('/tracker') { run TrackerController }

@@ -1,10 +1,12 @@
+require 'securerandom'
+
 class BoardTask
 
   attr_accessor :name, :id
 
   def initialize(vars = {})
     @name = vars['name'] if vars['name']
-    @id = vars['id'] if vars['id']
+    @id =  (!vars['id'].nil?) ? vars['id'] : SecureRandom.uuid
   end
 
   def toHash()

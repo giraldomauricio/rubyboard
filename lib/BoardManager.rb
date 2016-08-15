@@ -46,6 +46,35 @@ class BoardManager
     end
   end
 
+  def getAll()
+    getStructure(@path)
+  end
+
+  # TODO: Probably make a recursive function instead of a forced two level harvesting. Private?
+  def getStructure(path)
+    result = {}
+    Dir.foreach(path) do |entry|
+      next if (entry == '..' || entry == '.')
+      full_path = File.join(path, entry)
+      if File.directory?(full_path)
+        result[entry] = {}
+        Dir.foreach(full_path) do |task|
+          next if (task == '..' || task == '.')
+          full_path_tasks = File.join(path, entry, task)
+          if File.directory?(full_path_tasks)
+            result[entry][task] = []
+            Dir.foreach(full_path_tasks) do |individual_task|
+              next if (individual_task == '..' || individual_task == '.')
+              result[entry][task] << individual_task.gsub('.yml','')
+            end
+          end
+
+        end
+      end
+    end
+    result
+  end
+
   def move(task, original_row, original_column, destination_row, destination_column)
     AppLogger.info("From_row: #{original_row}, From_column: #{original_column}, To_row: #{destination_row}, To_column: #{destination_column}, task: #{task.inspect}",'BoardManager','move')
     original_path = @path + "/#{original_row}/#{original_column}/#{task.id}.yml"

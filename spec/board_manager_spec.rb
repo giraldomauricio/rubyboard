@@ -49,6 +49,14 @@ describe 'BoardLoader' do
       expect(File.exist?('./spec/sample_board/Expedite/Backlog/foo.yml'))
     end
 
+    it 'should get all tasks' do
+      bl = BoardManager.new('./spec/sample_board')
+      ENV['board_location'] = './spec/sample_board'
+      tasks = bl.getAll()
+      expected = {'Expedite' => {'Backlog' => ['task1'], 'Deployed' => ['task2'], 'WIP' => []}, 'Standard' => {'Backlog' => [], 'Deployed' => [], 'WIP' => []}}
+      expect(tasks).to eq expected
+    end
+
     it 'should add and move a task to a specific column' do
       bl = BoardManager.new('./spec/sample_board')
       task = BoardTask.new({'name' => 'Some new task', 'id' => 'foo'})
