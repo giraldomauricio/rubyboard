@@ -30,12 +30,13 @@ class ApiController < ApplicationController
     result.to_json
   end
 
+
   get '/add' do
     bm = BoardManager.new(ENV['board_location'])
     name = params['name']
     detail = params['detail']
     task = BoardTask.new({'name' => name, 'detail' => detail})
-    bm.add(params['row'],params['column'],task)
+    result = bm.add('Standard','Backlog',task)
     result.to_json
   end
 

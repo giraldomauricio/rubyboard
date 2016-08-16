@@ -120,7 +120,7 @@
               <% tasks.each do |task| %>
                   <div class="portlet" id="<%= task['task']['id'] %>">
                     <div class="portlet-header"><%= task['task']['name'] %></div>
-                    <div class="portlet-content"><%= task['task']['name'] %></div>
+                    <div class="portlet-content"><%= task['task']['detail'] %></div>
                   </div>
 
               <% end %>
@@ -130,8 +130,57 @@
   <% end %>
 </div>
 
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+  Add Task
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Add new task</h4>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="taskName">Name</label>
+            <input type="text" class="form-control" id="taskName" placeholder="Task name">
+          </div>
+
+          <div class="form-group">
+            <label for="taskDescription">Description</label>
+            <input type="text" class="form-control" id="taskDescription" placeholder="Task description">
+          </div>
+
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" onclick="addTask()">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 <script type="text/javascript">
+
+
+  function addTask() {
+    $.getJSON("/api/add", {
+      name: $('#taskName').val(),
+      detail: $('#taskDescription').val()
+    })
+        .done(function (json) {
+          console.log(json);
+          if(json.toString() == "true") {
+            location.reload();
+          }
+        });
+  }
 
   function createColumn(id) {
     var div = $("<div>", {id: id, "class": "column"});
@@ -168,7 +217,11 @@
       console.log(ui.item.parent().parent()[0].id);
       console.log(ui.item.parent()[0].id);
 
-      $.getJSON("/api/move", {id: ui.item.context.id, to_row: ui.item.parent().parent()[0].id, to_column: ui.item.parent()[0].id})
+      $.getJSON("/api/move", {
+        id: ui.item.context.id,
+        to_row: ui.item.parent().parent()[0].id,
+        to_column: ui.item.parent()[0].id
+      })
           .done(function (json) {
             console.log(json);
           });
