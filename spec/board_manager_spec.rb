@@ -53,10 +53,16 @@ describe 'BoardLoader' do
       bl = BoardManager.new('./spec/sample_board')
       ENV['board_location'] = './spec/sample_board'
       tasks = bl.getAll()
-      # puts tasks
-      # expected = {'Expedite' => {'Backlog' => ['task1'], 'Deployed' => ['task2'], 'WIP' => []}, 'Standard' => {'Backlog' => [], 'Deployed' => [], 'WIP' => []}}
-      expected = {'Expedite'=>{'Backlog'=>[{'task'=>{'name'=>'Some new task', 'id'=>'task1'}, '_swimline'=>'Expedite', '_column'=>'Backlog'}], 'Deployed'=>[{'task'=>{'name'=>'Some new task', 'id'=>'task2'}, '_swimline'=>'Expedite', '_column'=>'Deployed'}], 'WIP'=>[]}, 'Standard'=>{'Backlog'=>[], 'Deployed'=>[], 'WIP'=>[]}}
+      expected = {"Expedite"=>{"Backlog"=>[{"task"=>{"name"=>"Some new task", "id"=>"task1", "_swimline"=>"Expedite", "_column"=>"Backlog"}}], "Deployed"=>[{"task"=>{"name"=>"Some new task", "id"=>"task2", "_swimline"=>"Expedite", "_column"=>"Deployed"}}], "WIP"=>[]}, "Standard"=>{"Backlog"=>[], "Deployed"=>[], "WIP"=>[]}}
       expect(tasks).to eq expected
+    end
+
+    it 'should find a task' do
+      bl = BoardManager.new('./spec/sample_board')
+      ENV['board_location'] = './spec/sample_board'
+      task = bl.find('task2')
+      expect(task._swimline).to eq 'Expedite'
+      expect(task.name).to eq 'Some new task'
     end
 
     it 'should add and move a task to a specific column' do
@@ -66,6 +72,18 @@ describe 'BoardLoader' do
       expect(result).to eq true
       expect(File.exist?('./spec/sample_board/Expedite/Backlog/foo.yml'))
       result = bl.move(task, 'Expedite','Backlog', 'Expedite', 'WIP')
+      expect(result).to eq true
+      expect(!File.exist?('./spec/sample_board/Expedite/Backlog/foo.yml'))
+      expect(File.exist?('./spec/sample_board/Expedite/WIP/foo.yml'))
+    end
+
+    it 'should add and move a task to a specific column using moveTo' do
+      bl = BoardManager.new('./spec/sample_board')
+      task = BoardTask.new({'name' => 'Some new task', 'id' => 'foo'})
+      result = bl.add('Expedite','Backlog', task)
+      expect(result).to eq true
+      expect(File.exist?('./spec/sample_board/Expedite/Backlog/foo.yml'))
+      result = bl.moveTo('foo', 'Expedite', 'WIP')
       expect(result).to eq true
       expect(!File.exist?('./spec/sample_board/Expedite/Backlog/foo.yml'))
       expect(File.exist?('./spec/sample_board/Expedite/WIP/foo.yml'))

@@ -110,35 +110,35 @@
 </nav>
 
 
-
-  <% list.each do |swim_line, columns| %>
-    <div class="container-fluid" style="margin-top: 100px" id="<%=swim_line%>">
-      <div class="column-header"><%=swim_line%></div>
+<div style="margin-top: 100px">
+<% list.each do |swim_line, columns| %>
+    <div class="container-fluid"  id="<%= swim_line %>">
+      <div class="column-header"><%= swim_line %></div>
       <% columns.each do |column, tasks| %>
-          <div class="column" id="<%=column%>">
-            <div class="column-header"><%=column%></div>
+          <div class="column" id="<%= column %>">
+            <div class="column-header"><%= column %></div>
             <% tasks.each do |task| %>
-                <div class="portlet" id="<%=task['task']['id']%>">
-                  <div class="portlet-header"><%=task['task']['name']%></div>
-                  <div class="portlet-content"><%=task['task']['name']%></div>
+                <div class="portlet" id="<%= task['task']['id'] %>">
+                  <div class="portlet-header"><%= task['task']['name'] %></div>
+                  <div class="portlet-content"><%= task['task']['name'] %></div>
                 </div>
 
             <% end %>
           </div>
       <% end %>
-      </div>
-  <% end%>
-
+    </div>
+<% end %>
+</div>
 
 
 <script type="text/javascript">
 
-  function createColumn(id){
+  function createColumn(id) {
     var div = $("<div>", {id: id, "class": "column"});
     return div;
   }
 
-  function createPortlet(id, title, content){
+  function createPortlet(id, title, content) {
     var div = $("<div>", {id: id, "class": "portlet"});
     var header = $("<div>", {id: id, "class": "portlet-header"});
     header.html(title);
@@ -197,26 +197,26 @@
     icon.closest(".portlet").find(".portlet-content").toggle();
   });
 
-//  $( document ).ready(function() {
-//    $.getJSON("/api/all", function (data) {
-////      console.log(data);
-//      $.each(data, function (key, object) {
-////        console.log(key);
-////        console.log(object);
-//        var $col = createColumn(key);
-//        $.each(object, function (key2, object2) {
-////          console.log(key2);
-////          console.log(object2);
-//          var $row = createPortlet("1","Title","Content");
-//          $col.append($row);
-//        });
-//        $("#main_board").append($col).html();
-//
-//      });
-//
-//
-//    });
-//  });
+  //  $( document ).ready(function() {
+  //    $.getJSON("/api/all", function (data) {
+  ////      console.log(data);
+  //      $.each(data, function (key, object) {
+  ////        console.log(key);
+  ////        console.log(object);
+  //        var $col = createColumn(key);
+  //        $.each(object, function (key2, object2) {
+  ////          console.log(key2);
+  ////          console.log(object2);
+  //          var $row = createPortlet("1","Title","Content");
+  //          $col.append($row);
+  //        });
+  //        $("#main_board").append($col).html();
+  //
+  //      });
+  //
+  //
+  //    });
+  //  });
 
 </script>
 

@@ -50,8 +50,13 @@ class BoardManager
     getStructure(@path)
   end
 
+  def find(id)
+    task_data = getStructure(@path, id)
+    BoardTask.new(task_data['task'])
+  end
+
   # TODO: Probably make a recursive function instead of a forced two level harvesting. Private?
-  def getStructure(path)
+  def getStructure(path, id = nil)
     result = {}
     Dir.foreach(path) do |entry|
       next if (entry == '..' || entry == '.')
@@ -69,8 +74,8 @@ class BoardManager
               task_data = read(task_file_name)
               task_data['task']['_swimline'] = entry
               task_data['task']['_column'] = task
-              # result[entry][task] << individual_task.gsub('.yml','')
               result[entry][task] << task_data
+              return task_data if(!id.nil? && task_data['task']['id'] == id)
             end
           end
 
@@ -79,6 +84,14 @@ class BoardManager
     end
     result
   end
+
+  def moveTo(task_id, destination_row, destination_column)
+    task_data = find(task_id)
+    original_row = task_data._swimline
+    original_column = task_data._column
+    move(task_data, original_row, original_column, destination_row, destination_column)
+  end
+
 
   def move(task, original_row, original_column, destination_row, destination_column)
     AppLogger.info("From_row: #{original_row}, From_column: #{original_column}, To_row: #{destination_row}, To_column: #{destination_column}, task: #{task.inspect}",'BoardManager','move')
