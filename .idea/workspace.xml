@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2c8cf065-d5ca-4dbe-9fb1-cc0b5da02d5f" name="Default" comment="A">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spec/sample_board/structure.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="2c8cf065-d5ca-4dbe-9fb1-cc0b5da02d5f" name="Default" comment="A" />
     <ignored path="rubyboard.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -697,7 +694,7 @@
       <option name="presentableId" value="Default" />
       <updated>1471009345825</updated>
       <workItem from="1471009347121" duration="13405000" />
-      <workItem from="1471239435528" duration="27414000" />
+      <workItem from="1471239435528" duration="27547000" />
     </task>
     <task id="LOCAL-00001" summary="Added base logic to the board loader.">
       <created>1471017195700</created>
@@ -785,7 +782,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40819000" />
+    <option name="totallyTimeSpent" value="40952000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="2560" height="1413" extended-state="6" />
