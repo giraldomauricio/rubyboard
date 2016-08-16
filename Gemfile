@@ -6,6 +6,7 @@ group :test, :development do
   gem 'rack-test'
   gem 'rspec'
 end
+gem "codeclimate-test-reporter", group: :test, require: nil
 group :test do
   # gem 'cucumber'
   # gem 'capybara'

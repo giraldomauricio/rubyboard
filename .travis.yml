@@ -1,4 +1,7 @@
 language: ruby
 rvm:
  - jruby-9.0.4.0
+addons:
+ code_climate:
+   repo_token: 69f27a812b6ee2c69d22e648a34c3cb71ef339a1163d0ee453c7558bf703c516
 script: bundle exec rspec spec
