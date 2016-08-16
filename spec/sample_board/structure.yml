@@ -1,0 +1,9 @@
+---
+  Expedite:
+    - Backlog
+    - WIP
+    - Deployed
+  Standard:
+    - Backlog
+    - WIP
+    - Deployed
