@@ -65,7 +65,12 @@ class BoardManager
             result[entry][task] = []
             Dir.foreach(full_path_tasks) do |individual_task|
               next if (individual_task == '..' || individual_task == '.')
-              result[entry][task] << individual_task.gsub('.yml','')
+              task_file_name = File.join(path, entry, task, individual_task)
+              task_data = read(task_file_name)
+              task_data['task']['_swimline'] = entry
+              task_data['task']['_column'] = task
+              # result[entry][task] << individual_task.gsub('.yml','')
+              result[entry][task] << task_data
             end
           end
 

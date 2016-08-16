@@ -19,7 +19,9 @@ class IndexController < ApplicationController
   end
 
   get '/' do
-    erb :index
+    bm = BoardManager.new(ENV['board_location'])
+    list = bm.getAll()
+    erb :index, :locals => {"list" => list}
   end
 
   get '/boards' do
