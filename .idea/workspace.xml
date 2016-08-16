@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2c8cf065-d5ca-4dbe-9fb1-cc0b5da02d5f" name="Default" comment="A" />
+    <list default="true" id="2c8cf065-d5ca-4dbe-9fb1-cc0b5da02d5f" name="Default" comment="A">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/BoardManager.rb" afterPath="$PROJECT_DIR$/lib/BoardManager.rb" />
+    </list>
     <ignored path="rubyboard.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -24,21 +26,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="BoardTask.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/BoardTask.rb">
+      <file leaf-file-name="board_manager_spec.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/spec/board_manager_spec.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="52" selection-start-line="16" selection-start-column="52" selection-end-line="16" selection-end-column="52" />
+            <state relative-caret-position="620">
+              <caret line="54" column="22" selection-start-line="54" selection-start-column="22" selection-end-line="54" selection-end-column="22" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="8d864a9f-2798-4b11-b364-71b2b4ef555e.yml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/spec/sample_board/Expedite/Deployed/8d864a9f-2798-4b11-b364-71b2b4ef555e.yml">
+      <file leaf-file-name="BoardManager.rb" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/lib/BoardManager.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+            <state relative-caret-position="671">
+              <caret line="73" column="46" selection-start-line="73" selection-start-column="46" selection-end-line="73" selection-end-column="46" />
               <folding />
             </state>
           </provider>
@@ -106,7 +108,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="readme.md" pinned="false" current-in-tab="true">
+      <file leaf-file-name="readme.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/spec/sample_board/Standard/WIP/readme.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
@@ -128,19 +130,6 @@
                 <folding />
               </first_editor>
               <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.erb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/index.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="178">
-              <caret line="134" column="10" selection-start-line="134" selection-start-column="10" selection-end-line="134" selection-end-column="10" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="e#4153#4160#0#HTML" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -188,8 +177,6 @@
         <option value="$PROJECT_DIR$/controllers/IndexController.rb" />
         <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/boards/readme.md" />
-        <option value="$PROJECT_DIR$/spec/board_manager_spec.rb" />
-        <option value="$PROJECT_DIR$/lib/BoardManager.rb" />
         <option value="$PROJECT_DIR$/controllers/ApiController.rb" />
         <option value="$PROJECT_DIR$/views/index.erb" />
         <option value="$PROJECT_DIR$/lib/BoardTask.rb" />
@@ -198,6 +185,8 @@
         <option value="$PROJECT_DIR$/logs/readme.md" />
         <option value="$PROJECT_DIR$/spec/sample_board/Expedite/Backlog/readme.md" />
         <option value="$PROJECT_DIR$/spec/sample_board/Standard/WIP/readme.md" />
+        <option value="$PROJECT_DIR$/spec/board_manager_spec.rb" />
+        <option value="$PROJECT_DIR$/lib/BoardManager.rb" />
       </list>
     </option>
   </component>
@@ -694,7 +683,7 @@
       <option name="presentableId" value="Default" />
       <updated>1471009345825</updated>
       <workItem from="1471009347121" duration="13405000" />
-      <workItem from="1471239435528" duration="27547000" />
+      <workItem from="1471239435528" duration="28300000" />
     </task>
     <task id="LOCAL-00001" summary="Added base logic to the board loader.">
       <created>1471017195700</created>
@@ -782,13 +771,13 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40952000" />
+    <option name="totallyTimeSpent" value="41705000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="2560" height="1413" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.121875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.121875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.329927" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1048,26 +1037,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/BoardManager.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="447">
-          <caret line="34" column="6" selection-start-line="34" selection-start-column="6" selection-end-line="34" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/spec/sample_board/Expedite/Deployed/3d725c61-8bb1-4a48-9669-e16ca9b6b746.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spec/board_manager_spec.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1050">
-          <caret line="70" column="49" selection-start-line="70" selection-start-column="49" selection-end-line="70" selection-end-column="49" />
           <folding />
         </state>
       </provider>
@@ -1240,6 +1213,22 @@
             <folding />
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spec/board_manager_spec.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="620">
+          <caret line="54" column="22" selection-start-line="54" selection-start-column="22" selection-end-line="54" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/BoardManager.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="671">
+          <caret line="73" column="46" selection-start-line="73" selection-start-column="46" selection-end-line="73" selection-end-column="46" />
+          <folding />
         </state>
       </provider>
     </entry>
