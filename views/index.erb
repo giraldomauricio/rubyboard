@@ -111,23 +111,23 @@
 
 
 <div style="margin-top: 100px">
-<% list.each do |swim_line, columns| %>
-    <div class="container-fluid"  id="<%= swim_line %>">
-      <div class="column-header"><%= swim_line %></div>
-      <% columns.each do |column, tasks| %>
-          <div class="column" id="<%= column %>">
-            <div class="column-header"><%= column %></div>
-            <% tasks.each do |task| %>
-                <div class="portlet" id="<%= task['task']['id'] %>">
-                  <div class="portlet-header"><%= task['task']['name'] %></div>
-                  <div class="portlet-content"><%= task['task']['name'] %></div>
-                </div>
+  <% list.each do |swim_line, columns| %>
+      <div class="container-fluid" id="<%= swim_line %>">
+        <div class="column-header"><%= swim_line %></div>
+        <% columns.each do |column, tasks| %>
+            <div class="column" id="<%= column %>">
+              <div class="column-header"><%= column %></div>
+              <% tasks.each do |task| %>
+                  <div class="portlet" id="<%= task['task']['id'] %>">
+                    <div class="portlet-header"><%= task['task']['name'] %></div>
+                    <div class="portlet-content"><%= task['task']['name'] %></div>
+                  </div>
 
-            <% end %>
-          </div>
-      <% end %>
-    </div>
-<% end %>
+              <% end %>
+            </div>
+        <% end %>
+      </div>
+  <% end %>
 </div>
 
 
@@ -162,10 +162,17 @@
       ui.item.removeClass("tilt");
       $("html").unbind('mousemove', ui.item.data("move_handler"));
       ui.item.removeData("move_handler");
-      console.log(ui.item.context.outerText);
-      console.log(ui.item.parent()[0].id);
+//      console.log(ui.item.context.outerText);
+
       console.log(ui.item.context.id);
       console.log(ui.item.parent().parent()[0].id);
+      console.log(ui.item.parent()[0].id);
+
+      $.getJSON("/api/move", {id: ui.item.context.id, to_row: ui.item.parent().parent()[0].id, to_column: ui.item.parent()[0].id})
+          .done(function (json) {
+            console.log(json);
+          });
+
     }
   });
 
