@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="2c8cf065-d5ca-4dbe-9fb1-cc0b5da02d5f" name="Default" comment="A">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/BoardManager.rb" afterPath="$PROJECT_DIR$/lib/BoardManager.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spec/board_manager_spec.rb" afterPath="$PROJECT_DIR$/spec/board_manager_spec.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/BoardTask.rb" afterPath="$PROJECT_DIR$/lib/BoardTask.rb" />
     </list>
     <ignored path="rubyboard.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -37,11 +37,21 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="BoardTask.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/BoardTask.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="11" column="25" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="BoardManager.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/BoardManager.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="337">
-              <caret line="71" column="52" selection-start-line="71" selection-start-column="52" selection-end-line="71" selection-end-column="52" />
+            <state relative-caret-position="495">
+              <caret line="56" column="2" selection-start-line="56" selection-start-column="2" selection-end-line="56" selection-end-column="2" />
               <folding />
             </state>
           </provider>
@@ -121,7 +131,6 @@
         <option value="$PROJECT_DIR$/boards/readme.md" />
         <option value="$PROJECT_DIR$/controllers/ApiController.rb" />
         <option value="$PROJECT_DIR$/views/index.erb" />
-        <option value="$PROJECT_DIR$/lib/BoardTask.rb" />
         <option value="$PROJECT_DIR$/logs/readme.md" />
         <option value="$PROJECT_DIR$/spec/sample_board/Expedite/Backlog/readme.md" />
         <option value="$PROJECT_DIR$/spec/sample_board/Standard/WIP/readme.md" />
@@ -131,6 +140,7 @@
         <option value="$PROJECT_DIR$/.travis.yml" />
         <option value="$PROJECT_DIR$/lib/AppLogger.rb" />
         <option value="$PROJECT_DIR$/spec/board_manager_spec.rb" />
+        <option value="$PROJECT_DIR$/lib/BoardTask.rb" />
         <option value="$PROJECT_DIR$/lib/BoardManager.rb" />
       </list>
     </option>
@@ -482,7 +492,7 @@
       <option name="presentableId" value="Default" />
       <updated>1471009345825</updated>
       <workItem from="1471009347121" duration="13405000" />
-      <workItem from="1471239435528" duration="32570000" />
+      <workItem from="1471239435528" duration="33107000" />
     </task>
     <task id="LOCAL-00001" summary="Added base logic to the board loader.">
       <created>1471017195700</created>
@@ -570,7 +580,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="45975000" />
+    <option name="totallyTimeSpent" value="46512000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="873" extended-state="6" />
@@ -869,14 +879,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/BoardTask.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="52" selection-start-line="16" selection-start-column="52" selection-end-line="16" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/spec/sample_board/Expedite/Deployed/8d864a9f-2798-4b11-b364-71b2b4ef555e.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -1015,6 +1017,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/lib/BoardTask.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="25" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/spec/board_manager_spec.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="530">
@@ -1025,8 +1035,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/BoardManager.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="337">
-          <caret line="71" column="52" selection-start-line="71" selection-start-column="52" selection-end-line="71" selection-end-column="52" />
+        <state relative-caret-position="495">
+          <caret line="56" column="2" selection-start-line="56" selection-start-column="2" selection-end-line="56" selection-end-column="2" />
           <folding />
         </state>
       </provider>
