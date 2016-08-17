@@ -36,8 +36,11 @@
     <orderEntry type="jdk" jdkName="RVM: jruby-9.0.4.0" jdkType="JRUBY_SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" scope="PROVIDED" name="bundler (v1.11.2, RVM: jruby-9.0.4.0) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="codeclimate-test-reporter (v0.6.0, RVM: jruby-9.0.4.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="diff-lcs (v1.2.5, RVM: jruby-9.0.4.0) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="docile (v1.1.5, RVM: jruby-9.0.4.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="dotenv (v2.1.1, RVM: jruby-9.0.4.0) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="json (v2.0.2, RVM: jruby-9.0.4.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rack (v1.6.4, RVM: jruby-9.0.4.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rack-protection (v1.5.3, RVM: jruby-9.0.4.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rack-test (v0.6.3, RVM: jruby-9.0.4.0) [gem]" level="application" />
@@ -47,6 +50,8 @@
     <orderEntry type="library" scope="PROVIDED" name="rspec-expectations (v3.5.0, RVM: jruby-9.0.4.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rspec-mocks (v3.5.0, RVM: jruby-9.0.4.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rspec-support (v3.5.0, RVM: jruby-9.0.4.0) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="simplecov (v0.12.0, RVM: jruby-9.0.4.0) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="simplecov-html (v0.10.0, RVM: jruby-9.0.4.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sinatra (v1.4.7, RVM: jruby-9.0.4.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="tilt (v2.0.5, RVM: jruby-9.0.4.0) [gem]" level="application" />
   </component>
