@@ -54,7 +54,7 @@ class BoardManager
     task_data = getStructure(@path, id)
     BoardTask.new(task_data['task'])
   end
-  
+
   def getStructure(path, id = nil)
     result = {}
     Dir.foreach(path) do |entry|
