@@ -1,3 +1,4 @@
+ENV['CODECLIMATE_REPO_TOKEN'] = '69f27a812b6ee2c69d22e648a34c3cb71ef339a1163d0ee453c7558bf703c516'
 require "codeclimate-test-reporter"
 CodeClimate::TestReporter.start
 require 'rubygems'

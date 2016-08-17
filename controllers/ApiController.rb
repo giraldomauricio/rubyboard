@@ -19,20 +19,20 @@ class ApiController < ApplicationController
   end
 
   get '/all' do
-    bm = BoardManager.new(ENV['board_location'])
+    bm = BoardManager.new(ENV['BOARD_LOCATION'])
     list = bm.getAll()
     list.to_json
   end
 
   get '/move' do
-    bm = BoardManager.new(ENV['board_location'])
+    bm = BoardManager.new(ENV['BOARD_LOCATION'])
     result = bm.moveTo(params['id'],params['to_row'],params['to_column'])
     result.to_json
   end
 
 
   get '/add' do
-    bm = BoardManager.new(ENV['board_location'])
+    bm = BoardManager.new(ENV['BOARD_LOCATION'])
     name = params['name']
     detail = params['detail']
     task = BoardTask.new({'name' => name, 'detail' => detail})

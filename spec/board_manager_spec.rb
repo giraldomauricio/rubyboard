@@ -53,7 +53,7 @@ describe 'BoardLoader' do
       bl = BoardManager.new('./spec/sample_board')
       ENV['board_location'] = './spec/sample_board'
       tasks = bl.getAll()
-      expected = {"Expedite"=>{"Backlog"=>[{"task"=>{"name"=>"Some new task", "id"=>"task1", "_swimline"=>"Expedite", "_column"=>"Backlog"}}], "Deployed"=>[{"task"=>{"name"=>"Some new task", "id"=>"task2", "_swimline"=>"Expedite", "_column"=>"Deployed"}}], "WIP"=>[]}, "Standard"=>{"Backlog"=>[], "Deployed"=>[], "WIP"=>[]}}
+      expected = {'Expedite'=>{'Backlog'=>[{'task'=>{'name'=>'Some new task', 'id'=>'task1', '_swimline'=>'Expedite', '_column'=>'Backlog'}}], 'Deployed'=>[{'task'=>{'name'=>'Some new task', 'id'=>'task2', '_swimline'=>'Expedite', '_column'=>'Deployed'}}], 'WIP'=>[]}, 'Standard'=>{'Backlog'=>[], 'Deployed'=>[], 'WIP'=>[]}}
       expect(tasks).to eq expected
     end
 

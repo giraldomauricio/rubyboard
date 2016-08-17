@@ -39,6 +39,7 @@ class BoardManager
       file = File.open(path, 'w')
       file.write YAML::dump(task.toHash())
       file.close
+      registerBoardStatus()
       true
     rescue Exception => e
       AppLogger.error("Error adding task: #{e.message}",'BoardManager','move')
@@ -84,6 +85,32 @@ class BoardManager
     result
   end
 
+  def registerBoardStatus()
+    result = {}
+    Dir.foreach(@path) do |entry|
+      next if (!isABoardTask(entry))
+      full_path = File.join(path, entry)
+      if File.directory?(full_path)
+        result[entry] = {}
+        Dir.foreach(full_path) do |task|
+          next if (!isABoardTask(task))
+          full_path_tasks = File.join(path, entry, task)
+          if File.directory?(full_path_tasks)
+            result[entry][task] = []
+            Dir.foreach(full_path_tasks) do |individual_task|
+              next if (!isABoardTask(individual_task))
+              task_file_name = File.join(path, entry, task, individual_task)
+              task_data = read(task_file_name)
+              AppLogger.info("task_id=#{task_data['task']['id']}, task_column=#{task}, task_swimline=#{entry}",'BoardManager','registerBoardStatus')
+            end
+          end
+
+        end
+      end
+    end
+    result
+  end
+
   def isABoardTask(file_name)
     !(file_name == '..' || file_name == '.' || file_name == 'readme.md')
   end
@@ -104,6 +131,7 @@ class BoardManager
     return false if !File.exist?(original_path)
     begin
       File.rename original_path, destination_path
+      registerBoardStatus()
       true
     rescue
       AppLogger.error('Cannot move task','BoardManager','move')
