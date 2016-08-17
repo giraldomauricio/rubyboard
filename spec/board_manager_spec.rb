@@ -89,6 +89,14 @@ describe 'BoardLoader' do
       expect(File.exist?('./spec/sample_board/Expedite/WIP/foo.yml'))
     end
 
+    it 'checks the file is parto of swim lines' do
+      bl = BoardManager.new
+      expect(bl.isABoardTask('some.yml')).to eq true
+      expect(bl.isABoardTask('readme.md')).to eq false
+      expect(bl.isABoardTask('.')).to eq false
+      expect(bl.isABoardTask('..')).to eq false
+    end
+
   end
 
   context 'Failing cases' do

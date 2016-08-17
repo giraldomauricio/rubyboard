@@ -59,17 +59,17 @@ class BoardManager
   def getStructure(path, id = nil)
     result = {}
     Dir.foreach(path) do |entry|
-      next if (entry == '..' || entry == '.' || entry == 'readme.md')
+      next if (!isABoardTask(entry))
       full_path = File.join(path, entry)
       if File.directory?(full_path)
         result[entry] = {}
         Dir.foreach(full_path) do |task|
-          next if (task == '..' || task == '.' || task == 'readme.md')
+          next if (!isABoardTask(task))
           full_path_tasks = File.join(path, entry, task)
           if File.directory?(full_path_tasks)
             result[entry][task] = []
             Dir.foreach(full_path_tasks) do |individual_task|
-              next if (individual_task == '..' || individual_task == '.' || individual_task == 'readme.md')
+              next if (!isABoardTask(individual_task))
               task_file_name = File.join(path, entry, task, individual_task)
               task_data = read(task_file_name)
               task_data['task']['_swimline'] = entry
@@ -83,6 +83,10 @@ class BoardManager
       end
     end
     result
+  end
+
+  def isABoardTask(file_name)
+    !(file_name == '..' || file_name == '.' || file_name == 'readme.md')
   end
 
   def moveTo(task_id, destination_row, destination_column)
