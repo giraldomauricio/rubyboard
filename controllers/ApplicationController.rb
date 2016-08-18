@@ -1,6 +1,3 @@
-require './lib/AssetHandler'
-# require "./lib/AppLogger.rb"
-
 # ApplicationController.rb
 class ApplicationController < Sinatra::Base
   # helpers ApplicationHelper
@@ -10,6 +7,6 @@ class ApplicationController < Sinatra::Base
   # set folder for templates to ../views, but make the path absolute
   set :views, File.expand_path('../../views', __FILE__)
 
-  use AssetHandler
+  # use AssetHandler
 
 end

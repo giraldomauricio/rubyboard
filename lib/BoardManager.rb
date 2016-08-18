@@ -7,10 +7,10 @@ class BoardManager
 
   def initialize(path = '.')
     AppLogger.info("Initializing using path: #{path}",'BoardManager','initialize')
-    @path      = path
+    @path      = path if (path)
     @loaded    = false
     @structure = {}
-    if File.exist?(path + '/' + 'structure.yml')
+    if File.exist?(@path + '/' + 'structure.yml')
       file = File.open(path + '/' + 'structure.yml', 'rb')
       file_contents = file.read
       @structure = YAML::load(file_contents)

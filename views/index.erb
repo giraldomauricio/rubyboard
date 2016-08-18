@@ -8,11 +8,8 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <link rel="icon" href="../../favicon.ico">
-
   <title>Starter Template for Bootstrap</title>
-
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.0/jquery-ui.js"></script>
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
@@ -79,11 +76,6 @@
       height: 50px;
     }
   </style>
-
-  <script>
-
-  </script>
-
 </head>
 
 <body>
@@ -108,7 +100,6 @@
     </div><!--/.nav-collapse -->
   </div>
 </nav>
-
 
 <div style="margin-top: 100px">
   <% list.each do |swim_line, columns| %>
@@ -168,7 +159,6 @@
 
 <script type="text/javascript">
 
-
   function addTask() {
     $.getJSON("/api/add", {
       name: $('#taskName').val(),
@@ -176,28 +166,11 @@
     })
         .done(function (json) {
           console.log(json);
-          if(json.toString() == "true") {
+          if (json.toString() == "true") {
             location.reload();
           }
         });
   }
-
-  function createColumn(id) {
-    var div = $("<div>", {id: id, "class": "column"});
-    return div;
-  }
-
-  function createPortlet(id, title, content) {
-    var div = $("<div>", {id: id, "class": "portlet"});
-    var header = $("<div>", {id: id, "class": "portlet-header"});
-    header.html(title);
-    var body = $("<div>", {id: id, "class": "portlet-content"});
-    body.html(content);
-    div.append(header);
-    div.append(body);
-    return div;
-  }
-
 
   $(".column").sortable({
     connectWith: ".column",
@@ -211,7 +184,6 @@
       ui.item.removeClass("tilt");
       $("html").unbind('mousemove', ui.item.data("move_handler"));
       ui.item.removeData("move_handler");
-//      console.log(ui.item.context.outerText);
 
       console.log(ui.item.context.id);
       console.log(ui.item.parent().parent()[0].id);
@@ -225,7 +197,6 @@
           .done(function (json) {
             console.log(json);
           });
-
     }
   });
 
@@ -257,29 +228,7 @@
     icon.closest(".portlet").find(".portlet-content").toggle();
   });
 
-  //  $( document ).ready(function() {
-  //    $.getJSON("/api/all", function (data) {
-  ////      console.log(data);
-  //      $.each(data, function (key, object) {
-  ////        console.log(key);
-  ////        console.log(object);
-  //        var $col = createColumn(key);
-  //        $.each(object, function (key2, object2) {
-  ////          console.log(key2);
-  ////          console.log(object2);
-  //          var $row = createPortlet("1","Title","Content");
-  //          $col.append($row);
-  //        });
-  //        $("#main_board").append($col).html();
-  //
-  //      });
-  //
-  //
-  //    });
-  //  });
 
 </script>
-
-
 </body>
 </html>
