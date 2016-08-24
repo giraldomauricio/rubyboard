@@ -48,15 +48,17 @@ class BoardManager
   end
 
   def getAll()
-    getStructure(@path)
+    # getStructureByDriveContents(@path)
+    getStructureByFileContents(@path)
   end
 
   def find(id)
-    task_data = getStructure(@path, id)
+    # task_data = getStructureByDriveContents(@path, id)
+    task_data = getStructureByFileContents(@path, id)
     BoardTask.new(task_data['task'])
   end
 
-  def getStructure(path, id = nil)
+  def getStructureByDriveContents(path, id = nil)
     result = {}
     Dir.foreach(path) do |entry|
       next if (!isABoardTask(entry))
@@ -82,6 +84,29 @@ class BoardManager
         end
       end
     end
+    result
+  end
+
+  def getStructureByFileContents(path, id = nil)
+    return false if !@loaded
+    result = {}
+    @structure.each { |line, column|
+      result[line] = {}
+      column.each {|name|
+        result[line][name] = []
+        full_path_tasks = File.join(path,line,name)
+        return false if !File.directory?(full_path_tasks)
+        Dir.foreach(full_path_tasks) do |task|
+          next if (!isABoardTask(task))
+          task_file_name = File.join(full_path_tasks, task)
+          task_data = read(task_file_name)
+          task_data['task']['_swimline'] = line
+          task_data['task']['_column'] = name
+          result[line][name] << task_data
+          return task_data if(!id.nil? && task_data['task']['id'] == id)
+        end
+      }
+    }
     result
   end
 

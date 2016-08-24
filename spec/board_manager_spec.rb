@@ -14,6 +14,13 @@ describe 'BoardLoader' do
 
   context 'Vanilla cases' do
 
+    it 'should get the same result from drive and structure if correctly configured' do
+      bl = BoardManager.new('./spec/sample_board')
+      result_1 = bl.getStructureByDriveContents('./spec/sample_board')
+      result_2 = bl.getStructureByFileContents('./spec/sample_board')
+      expect(result_1).to eq result_2
+    end
+
     it 'should Load the Structure' do
       bl = BoardManager.new
       expect(bl.path).to eq '.'

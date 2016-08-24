@@ -111,7 +111,7 @@
               <% tasks.each do |task| %>
                   <div class="portlet" id="<%= task['task']['id'] %>">
                     <div class="portlet-header"><%= task['task']['name'] %></div>
-                    <div class="portlet-content"><%= task['task']['detail'] %></div>
+                    <div class="portlet-content"><%= task['task']['detail'] %><br><%= task['task']['assignedTo'] %></div>
                   </div>
 
               <% end %>
@@ -147,6 +147,11 @@
             <input type="text" class="form-control" id="taskDescription" placeholder="Task description">
           </div>
 
+          <div class="form-group">
+            <label for="assignedTo">Name</label>
+            <input type="text" class="form-control" id="assignedTo" placeholder="Assigned to">
+          </div>
+
         </form>
       </div>
       <div class="modal-footer">
@@ -162,11 +167,12 @@
   function addTask() {
     $.getJSON("/api/add", {
       name: $('#taskName').val(),
-      detail: $('#taskDescription').val()
+      detail: $('#taskDescription').val(),
+      assignedTo: $('#assignedTo').val()
     })
         .done(function (json) {
           console.log(json);
-          if (json.toString() == "true") {
+          if (json.toString() != "false") {
             location.reload();
           }
         });

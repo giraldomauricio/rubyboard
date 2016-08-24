@@ -38,7 +38,8 @@ class ApiController < ApplicationController
     bm = BoardManager.new(@board_location)
     name = params['name']
     detail = params['detail']
-    task = BoardTask.new({'name' => name, 'detail' => detail})
+    assignedTo = params['assignedTo']
+    task = BoardTask.new({'name' => name, 'detail' => detail, 'assignedTo' => assignedTo})
     result = bm.add('Standard','Backlog',task)
     result = task.id if result
     result.to_json
